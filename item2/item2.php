@@ -41,7 +41,7 @@
         <div class="home-text">
             <h1> Selamat Datang di <br><span> Space Tech </span></h1>
             <p>Pilih produk yang kamu sukai lalu klik Beli ayo jangan sampe kehabisan.</p>
-            <a href="#" class="btn"> Catalog </a>
+            <a href="../catalog/catalog.php" class="btn"> Catalog </a>
         </div>
         <div class="home-img">
             <img src="" alt="">
@@ -163,6 +163,7 @@
             </div>
         </div>
     </section>
+    <!-- FOOTER SECTION -->
     <section class="footer">
         <div class="footer-box">
             <h3> Space Tech </h3>
@@ -208,8 +209,7 @@
         <p>&#169; All right Reserved</p>
     </div>
 
-    <script src="main.js">
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
