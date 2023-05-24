@@ -25,7 +25,7 @@ if (isset($_COOKIE['login']) && isset($_COOKIE['key'])) {
 }
 
 if (isset($_SESSION["login"])) {
-    header("location: index.php");
+    header("location: Dashboard.php");
     exit;
 }
 
@@ -58,7 +58,7 @@ if (isset($_POST["login"])) {
             }
 
 
-            header("Location: index.php");
+            header("Location: Dashboard.php");
             exit;
         }
     }

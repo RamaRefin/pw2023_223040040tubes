@@ -1,38 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION["login"])) {
-    header("location: login.php");
-    exit;
-}
-require 'functions.php';
-
-// Cek tombol submit sudah jalan atau belum
-if (isset($_POST["submit"])) {
-
-    //query insert data
-
-    //cek data berhasil di tambahkan atau tidak
-    if (tambah($_POST) > 0) {
-        echo "
-            <script>
-                alert('data berhasil ditambahkan!');
-                document.location.href= 'index.php';
-            </script>
-        ";
-    } else {
-        echo "
-        <script>
-                alert ('data gagal ditambahkan!');
-                document.location.href= 'index.php';
-            </script>
-            ";
-    }
-}
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +7,7 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel=" stylesheet" href="tambah.css">
+    <link rel=" stylesheet" href="Dashboard.css">
 </head>
 
 <body>
@@ -87,38 +52,36 @@ if (isset($_POST["submit"])) {
                     </a></li>
             </ul>
         </nav>
-        <div class="container2">
-            <form action="" method="post" enctype="multipart/form-data">
-                <h1> Tambah Item</h1>
 
-                <ul>
-                    <li>
-                        <label for="nrp"> Nama Item </label>
-                        <input type="text" name="nrp" required>
-                    </li>
-                    <li>
-                        <label for="nrp"> Deskripsi Item</label>
-                        <input type="text" name="nama" required>
-                    </li>
-                    <li>
-                        <label for="nrp"> Harga Item </label>
-                        <input type="text" name="email" required>
-                    </li>
-                    <li>
-                        <label for="nrp">Jurusan </label>
-                        <input type="text" name="jurusan" required>
-                    </li>
-                    <li>
-                        <label for="nrp">Gambar </label>
-                        <input type="file" name="gambar" required>
-                    </li>
-                    <li>
-                        <button type="submit" name="submit">Tambah Data!</button>
-                    </li>
-                </ul>
+        <section class="main">
+            <div class="main-top">
+                <h1> Data </h1>
+                <i class="fa-solid fa-chart-mixed"></i>
+            </div>
+            <div class="main-skills">
+                <div class="card">
+                    <i class="fas fa-users"></i>
+                    <h3> Visitors </h3>
+                    <p> 9623 </p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3> Buyer </h3>
+                    <p> 378 </p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-comment"></i>
+                    <h3> Comment </h3>
+                    <p> 1092 </p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-heart"></i>
+                    <h3> Likes </h3>
+                    <p> 4587 </p>
+                </div>
+            </div>
+        </section>
 
-            </form>
-        </div>
     </div>
 </body>
 
