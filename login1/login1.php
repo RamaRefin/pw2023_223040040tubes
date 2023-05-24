@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="login1.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -38,7 +39,7 @@
     </header>
     <!-- LOGIN -->
     <section>
-        <div class="form-box">
+        <div class="form-box" data-aos="flip-down" data-aos-duration="2000">
             <div class="form-value">
                 <form action="">
                     <h2>Login</h2>
@@ -106,6 +107,15 @@
     <div class="copyright">
         <p>&#169; All right Reserved</p>
     </div>
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

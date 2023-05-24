@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="item2.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
 
 
 </head>
@@ -48,7 +51,7 @@
         </div>
     </section>
     <!-- about -->
-    <section class="about" id="about">
+    <section class="about" data-aos="fade-up" data-aos-duration="2000" id="about">
         <div class="about-img">
             <img src="img/earth.jpg" alt="">
         </div>
@@ -62,7 +65,7 @@
         </div>
     </section>
     <!-- product -->
-    <section class="product" id="product">
+    <section class="product" data-aos="zoom-in" data-aos-duration="2000" id="product">
         <div class="heading">
             <h2>Our best product</h2>
         </div>
@@ -124,14 +127,14 @@
             <h2> Our customer </h2>
         </div>
         <!-- container -->
-        <div class="customer-container">
+        <div class="customer-container" data-aos="zoom-out" data-aos-duration="2000">
             <div class="box">
                 <div class="stars">
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star-half'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
                 </div>
                 <p> Mantap bro hp nya original dan bagus.</p>
                 <h2> Jackma </h2>
@@ -139,11 +142,11 @@
             </div>
             <div class="box">
                 <div class="stars">
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star-half'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
                 </div>
                 <p> Apik tenan mas'e muantap poll.</p>
                 <h2> Elon Musk </h2>
@@ -151,11 +154,11 @@
             </div>
             <div class="box">
                 <div class="stars">
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star'></i>
-                    <i class='bx bx-star-half'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
                 </div>
                 <p> Worth it banget gaes.</p>
                 <h2> Steve jobs </h2>
@@ -209,7 +212,10 @@
         <p>&#169; All right Reserved</p>
     </div>
 
-    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

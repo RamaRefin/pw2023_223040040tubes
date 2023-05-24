@@ -79,37 +79,45 @@ if (isset($_POST["login"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <h1> Halaman login </h1>
+
 
     <?php if (isset($error)) : ?>
         <p style="color: red; font-style: italic;"> username / password salah </p>
     <?php endif; ?>
 
+    <div class="container">
+        <div class="login">
+            <form action="" method="post">
+                <h1> Login Admin </h1>
+                <ul>
+                    <li>
+                        <label for="username">Username </label>
+                        <input type="text" name="username" id="username">
+                    </li>
+                    <li>
+                        <label for="password">Password </label>
+                        <input type="password" name="password" id="password">
+                    </li>
+                    <li>
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember">Remember me </label>
+                    </li>
+                    <li>
+                        <button type="submit" name="login"> Login</button>
+                    </li>
+                </ul>
 
-    <form action="" method="post">
+            </form>
+        </div>
 
-        <ul>
-            <li>
-                <label for="username">Username : </label>
-                <input type="text" name="username" id="username">
-            </li>
-            <li>
-                <label for="password">Password : </label>
-                <input type="password" name="password" id="password">
-            </li>
-            <li>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Remember me </label>
-            </li>
-            <li>
-                <button type="submit" name="login"> Login</button>
-            </li>
-        </ul>
-
-    </form>
+        <div class="right">
+            <img src="img/ikung.jpg" alt="">
+        </div>
+    </div>
 
 </body>
 

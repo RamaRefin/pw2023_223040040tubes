@@ -278,6 +278,7 @@ input:focus ~ :valid {
   text-align: center;
   background: var(--second-color);
 }
+
 /* RESPONSIVE WEB */
 @media (max-width: 1058px) {
   header {
