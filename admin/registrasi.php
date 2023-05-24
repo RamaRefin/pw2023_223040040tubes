@@ -40,7 +40,7 @@ if (isset($_POST["register"])) {
     <div class="container">
         <div class="registrasi">
             <form action="" method="post">
-                <h1> Registrasi Admin </h1>
+                <h1> Register Admin </h1>
 
                 <ul>
                     <li>
@@ -67,7 +67,7 @@ if (isset($_POST["register"])) {
         </div>
 
         <div class="right">
-            <img src="img/ikung.jpg" alt="">
+            <img src="img/6974871.png" alt="">
         </div>
     </div>
 

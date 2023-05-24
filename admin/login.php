@@ -120,7 +120,7 @@ if (isset($_POST["login"])) {
             </form>
         </div>
         <div class="right">
-            <img src="img/ikung.jpg" alt="">
+            <img src="img/8710439.png" alt="user">
         </div>
     </div>
 

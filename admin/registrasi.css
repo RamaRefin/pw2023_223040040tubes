@@ -6,11 +6,14 @@
 }
 
 body {
+  background: url(img/bgr.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: black;
 }
 
 .container {
@@ -33,7 +36,7 @@ h1 {
   text-align: center;
   font-weight: bolder;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 25px;
   color: black;
 }
 
