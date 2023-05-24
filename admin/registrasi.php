@@ -27,6 +27,7 @@ if (isset($_POST["register"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="registrasi.css">
     <style>
         label {
             display: block;
@@ -36,29 +37,39 @@ if (isset($_POST["register"])) {
 
 <body>
 
-    <h1> Halaman Registrasi </h1>
+    <div class="container">
+        <div class="registrasi">
+            <form action="" method="post">
+                <h1> Registrasi Admin </h1>
 
-    <form action="" method="post">
+                <ul>
+                    <li>
+                        <label for="username">username </label>
+                        <input type="text" name="username" id="username">
+                    </li>
+                    <li>
+                        <label for="password">password </label>
+                        <input type="password" name="password" id="password">
+                    </li>
+                    <li>
+                        <label for="password2">Konfirmasi password </label>
+                        <input type="Password" name="password2" id="password2">
+                    </li>
+                    <li>
+                        <button type="submit" name="register">Register! </button>
+                    </li>
+                    <div class="register">
+                        <p>Have a Account? <a href="login.php">Login</a></p>
+                    </div>
+                </ul>
 
-        <ul>
-            <li>
-                <label for="username">username : </label>
-                <input type="text" name="username" id="username">
-            </li>
-            <li>
-                <label for="password">password : </label>
-                <input type="password" name="password" id="password">
-            </li>
-            <li>
-                <label for="password2">Konfirmasi password : </label>
-                <input type="Password" name="password2" id="password2">
-            </li>
-            <li>
-                <button type="submit" name="register">Register! </button>
-            </li>
-        </ul>
+            </form>
+        </div>
 
-    </form>
+        <div class="right">
+            <img src="img/ikung.jpg" alt="">
+        </div>
+    </div>
 
 
 </body>

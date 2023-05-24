@@ -78,20 +78,23 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Login</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
 
 
-    <?php if (isset($error)) : ?>
-        <p style="color: red; font-style: italic;"> username / password salah </p>
-    <?php endif; ?>
+
 
     <div class="container">
         <div class="login">
             <form action="" method="post">
+                <?php if (isset($error)) : ?>
+                    <p style="color: red; font-style: italic;"> username / password salah </p>
+                <?php endif; ?>
+
+
                 <h1> Login Admin </h1>
                 <ul>
                     <li>
@@ -109,11 +112,13 @@ if (isset($_POST["login"])) {
                     <li>
                         <button type="submit" name="login"> Login</button>
                     </li>
+                    <div class="register">
+                        <p>Don't Have a Account <a href="registrasi.php">Register</a></p>
+                    </div>
                 </ul>
 
             </form>
         </div>
-
         <div class="right">
             <img src="img/ikung.jpg" alt="">
         </div>

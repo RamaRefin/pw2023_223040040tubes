@@ -21,7 +21,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
-.login {
+.registrasi {
   width: 400px;
 }
 form {
@@ -33,7 +33,7 @@ h1 {
   text-align: center;
   font-weight: bolder;
   text-transform: uppercase;
-  font-size: 25px;
+  font-size: 20px;
   color: black;
 }
 
@@ -90,30 +90,6 @@ button:hover {
 }
 
 /* RESPONSIVE WEB */
-
-@media (max-width: 880px) {
-  .container {
-    width: 100%;
-    max-width: 750px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  form {
-    width: 300px;
-    margin: 20px auto;
-  }
-  .login {
-    width: 400px;
-    padding: 20px;
-  }
-  button {
-    width: 100%;
-  }
-  .right img {
-    width: 100%;
-    height: 100%;
-  }
-}
 @media (max-width: 991px) {
   .container {
     width: 100%;
@@ -125,7 +101,30 @@ button:hover {
     width: 300px;
     margin: 20px auto;
   }
-  .login {
+  .registrasi {
+    width: 400px;
+    padding: 20px;
+  }
+  button {
+    width: 100%;
+  }
+  .right img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 880px) {
+  .container {
+    width: 100%;
+    max-width: 750px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  form {
+    width: 300px;
+    margin: 20px auto;
+  }
+  .registrasi {
     width: 400px;
     padding: 20px;
   }
@@ -148,7 +147,7 @@ button:hover {
     width: 300px;
     margin: 20px auto;
   }
-  .login {
+  .registrasi {
     width: 400px;
     padding: 20px;
   }
@@ -171,7 +170,7 @@ button:hover {
     width: 300px;
     margin: 20px auto;
   }
-  .login {
+  .registrasi {
     width: 400px;
     padding: 20px;
   }
@@ -193,7 +192,7 @@ button:hover {
     width: 300px;
     margin: 20px auto;
   }
-  .login {
+  .registrasi {
     width: 400px;
     padding: 20px;
   }
