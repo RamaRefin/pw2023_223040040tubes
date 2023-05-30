@@ -183,3 +183,43 @@ function registrasi($data)
 
     return mysqli_affected_rows($conn);
 }
+
+
+// registrasi untuk user
+
+function register($data)
+{
+    global $conn;
+
+    $username1 = strtolower(stripslashes($data["username1"]));
+    $email = strtolower(stripslashes($data["email"]));
+    $password3 = mysqli_real_escape_string($conn, $data["password3"]);
+    $password4 = mysqli_real_escape_string($conn, $data["password4"]);
+
+    //username sudah ada / belum
+    $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username1'");
+    if (mysqli_fetch_assoc($result)) {
+        echo "<script>
+                alert('Username sudah terdaftar!')
+                </script>";
+        return false;
+    }
+
+
+    //cek konfirmasi password
+
+    if ($password3 !== $password4) {
+        echo "<script>
+                    alert('konfirmasi password tidak sesuai!') 
+                    </script> ";
+        return false;
+    }
+
+    //enskripsi password 
+    $password3 = password_hash($password3, PASSWORD_DEFAULT);
+
+    //tambahkan user baru ke database
+    mysqli_query($conn, "INSERT INTO users VALUES('', '$username1', '$email', '$password3')");
+
+    return mysqli_affected_rows($conn);
+}

@@ -167,7 +167,7 @@ header {
   align-items: center;
   justify-content: space-around;
 }
-.product-container .box .content span {
+.product-container .box .content span p {
   padding: 0 1rem;
   color: var(--text-color);
   background: var(--main-color);

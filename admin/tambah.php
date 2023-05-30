@@ -53,7 +53,7 @@ if (isset($_POST["submit"])) {
                         <img src="img/admin.png" alt="admin.png">
                         <span class="nav-item"> Refin </span>
                     </a></li>
-                <li><a href="#">
+                <li><a href="../admin/Dashboard.php">
                         <i class="fas fa-solid fa-house"></i>
                         <span class="nav-item">Home</span>
                     </a></li>

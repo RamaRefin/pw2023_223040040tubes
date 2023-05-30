@@ -1,3 +1,13 @@
+<?php
+
+$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+$query = "SELECT * FROM mahasiswa";
+$mahasiswa = $conn->query($query);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,54 +63,19 @@
         <br><br>
         <!-- container -->
         <div class="product-container">
-            <div class="box">
-                <img src="img/ip12.png" alt="iphone">
-                <h3> Iphone 12 </h3>
-                <div class="content">
-                    <span>Rp. 11.999.000</span>
-                    <a href="#">add to cart</a>
+            <?php while ($row = mysqli_fetch_assoc($mahasiswa)) { ?>
+                <div class="box">
+                    <img src="img/ip12.png" alt="iphone">
+                    <h3><?= $row["Judul"]; ?></h3>
+                    <p><?= $row["Deskripsi"]; ?>
+                    <div class="content">
+                        <span>
+                            <p><?= $row["Harga"]; ?></p>
+                        </span>
+                        <a href="#">add to cart</a>
+                    </div>
                 </div>
-            </div>
-            <div class="box">
-                <img src="img/ip13.png" alt="iphone">
-                <h3> Iphone 13 </h3>
-                <div class="content">
-                    <span>Rp.15.199.000</span>
-                    <a href="#">add to cart</a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="img/ip14.png" alt="iphone">
-                <h3> Iphone 14 </h3>
-                <div class="content">
-                    <span>Rp.15.999.000</span>
-                    <a href="#">add to cart</a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="img/samsungs23.png" alt="samsung">
-                <h3> Samsung s23 Ultra</h3>
-                <div class="content">
-                    <span>Rp.21.999.000</span>
-                    <a href="#">add to cart</a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="img/zfold.png" alt="samsung">
-                <h3> Samsung Galaxy Z fold 4</h3>
-                <div class="content">
-                    <span>Rp.24.999.000</span>
-                    <a href="#">add to cart</a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="img/minot12.png" alt="xiamo">
-                <h3> Xiaomi Redmi note 12 </h3>
-                <div class="content">
-                    <span>Rp.4.599.000</span>
-                    <a href="#">add to cart</a>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </section>
     <!-- FOOTER SECTION -->

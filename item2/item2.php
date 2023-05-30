@@ -31,8 +31,9 @@
         </ul>
         <!-- icon -->
         <div class="header-icon">
-            <i class='bx bx-cart'></i>
             <i class='bx bx-search' id="search-icon"></i>
+            <i class='bx bx-cart'></i>
+            <a href="../login1/Login1.php"><i class='bx bx-user'></a></i>
         </div>
         <!-- search box -->
         <div class="search-box">

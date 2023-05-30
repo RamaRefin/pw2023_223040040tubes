@@ -51,9 +51,9 @@ if (isset($_POST["cari"])) {
 
     <a href="logout.php">Log out</a>
 
-    <h1> Daftar mahasiswa </h1>
+    <h1> Daftar Item </h1>
 
-    <a href="tambah.php">Tambah Data Mahasiswa</a>
+    <a href="tambah.php">Tambah Data Item</a>
     <br><br>
 
     <form action="" method="post">
@@ -94,8 +94,8 @@ if (isset($_POST["cari"])) {
             <th>No.</th>
             <th>Aksi</th>
             <th>Gambar</th>
-            <th>NRP</th>
             <th>Nama</th>
+            <th>Deskripsi</th>
             <th>Email</th>
             <th>Jurusan</th>
         </tr>
@@ -110,9 +110,9 @@ if (isset($_POST["cari"])) {
                     return confirm('yakin?');">hapus</a>
                 </td>
                 <td><img src="img/<?= $row["gambar"]; ?>" width="100"></td>
-                <td><?= $row["nrp"]; ?></td>
-                <td><?= $row["nama"]; ?></td>
-                <td><?= $row["email"]; ?></td>
+                <td><?= $row["Judul"]; ?></td>
+                <td><?= $row["Deskripsi"]; ?></td>
+                <td><?= $row["Harga"]; ?></td>
                 <td><?= $row["jurusan"]; ?></td>
             </tr>
             <?php $i++; ?>
@@ -120,6 +120,7 @@ if (isset($_POST["cari"])) {
 
 
     </table>
+
 
 
 </body>

@@ -1,3 +1,20 @@
+<?php
+require '../admin/functions.php';
+
+if (isset($_POST["signup"])) {
+
+    if (register($_POST) > 0) {
+        echo "<script>
+        alert('Akun Berhasil di tambahkan!')
+        </script>";
+    } else {
+        echo mysqli_error($conn);
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,25 +58,25 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <form action="" method="post">
                     <h2>Sign Up</h2>
                     <div class="inputbox">
-                        <input type="Username" required>
-                        <label for="">Username <label>
+                        <input type="text" name="username1" id="username1" required>
+                        <label for="username1">Username <label>
                     </div>
                     <div class="inputbox">
-                        <input type="email" required>
-                        <label for="">Email <label>
+                        <input type="email" name="email" id="email" required>
+                        <label for="email">Email <label>
                     </div>
                     <div class="inputbox">
-                        <input type="Password" required>
-                        <label for="">Password <label>
+                        <input type="Password" name="password3" id="password3" required>
+                        <label for="password3">Password <label>
                     </div>
                     <div class="inputbox">
-                        <input type="Password" required>
-                        <label for="">Confirm Password <label>
+                        <input type="Password" name="password4" id="password4" required>
+                        <label for="password4">Confirm Password <label>
                     </div>
-                    <button>Sign Up</button>
+                    <button type="submit" name="signup">Sign Up</button>
                     <div class="register">
                         <p>Have a Account? <a href="../login1/login1.php">Login</a></p>
                     </div>
