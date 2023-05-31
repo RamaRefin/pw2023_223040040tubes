@@ -58,23 +58,23 @@ if (isset($_POST["submit"])) {
 
         <ul>
             <li>
-                <label for="nrp">NRP : </label>
-                <input type="text" name="nrp" required value="<?= $mhs["nrp"] ?>">
+                <label for="Judul">Judul : </label>
+                <input type="text" name="Judul" required value="<?= $mhs["Judul"] ?>">
             </li>
             <li>
-                <label for="nrp">Nama : </label>
-                <input type="text" name="nama" required value="<?= $mhs["nama"] ?>">
+                <label for="Deskripsi">Deskripsi : </label>
+                <input type="text" name="Deskripsi" required value="<?= $mhs["Deskripsi"] ?>">
             </li>
             <li>
-                <label for="nrp">Email : </label>
-                <input type="text" name="email" required value="<?= $mhs["email"] ?>">
+                <label for="Harga">Harga item : </label>
+                <input type="text" name="Harga" required value="<?= $mhs["Harga"] ?>">
             </li>
             <li>
-                <label for="nrp">Jurusan : </label>
-                <input type="text" name="jurusan" required value="<?= $mhs["jurusan"] ?>">
+                <label for="ket">Ket : </label>
+                <input type="text" name="ket" required value="<?= $mhs["ket"] ?>">
             </li>
             <li>
-                <label for="nrp">Gambar : </label> <br>
+                <label for="gambar">Gambar : </label> <br>
                 <img src="img/<?= $mhs['gambar']; ?>" width="100"> <br>
                 <input type="file" name="gambar" id="gambar">
             </li>

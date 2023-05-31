@@ -6,7 +6,15 @@ $mahasiswa = $conn->query($query);
 
 ?>
 
+<?php
 
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("location: ../login1/login1.php");
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +47,7 @@ $mahasiswa = $conn->query($query);
         <div class="header-icon">
             <i class='bx bx-search' id="search-icon"></i>
             <i class='bx bx-cart'></i>
-            <a href="../login1/Login1.php"><i class='bx bx-user'></a></i>
+            <a href="../logoutus/logoutus.php"><i class='bx bx-log-out'></a></i>
         </div>
         <!-- search box -->
         <div class="search-box">

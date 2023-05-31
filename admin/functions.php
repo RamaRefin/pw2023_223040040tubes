@@ -106,15 +106,15 @@ function ubah($data)
 {
     global $conn;
     $id = $data["id"];
-    $nrp = htmlspecialchars($data["nrp"]);
-    $nama = htmlspecialchars($data["nama"]);
-    $email = htmlspecialchars($data["email"]);
-    $jurusan = htmlspecialchars($data["jurusan"]);
-    $gambarLama = htmlspecialchars($data["gambarLama"]);
+    $Judul = htmlspecialchars($data["Judul"]);
+    $Deskripsi = htmlspecialchars($data["Deskripsi"]);
+    $Harga = htmlspecialchars($data["Harga"]);
+    $ket = htmlspecialchars($data["ket"]);
+    $gambar = htmlspecialchars($data["gambar"]);
 
     //apakah user pilih gambar baru atau tidak
     if ($_FILES['gambar']['error'] === 4) {
-        $gambar = $gambarLama;
+        $gambar = $gambar;
     } else {
         $gambar = upload();
     }
@@ -123,10 +123,10 @@ function ubah($data)
 
 
     $query = "UPDATE mahasiswa SET
-            nrp = '$nrp',
-            nama = '$nama',
-            email = '$email',
-            jurusan = '$jurusan',
+            Judul = '$Judul',
+            Deskripsi = '$Deskripsi',
+            Harga = '$Harga',
+            ket = '$ket',
             gambar = '$gambar'
             WHERE id = $id
             ";

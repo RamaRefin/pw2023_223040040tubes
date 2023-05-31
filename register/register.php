@@ -22,7 +22,7 @@ if (isset($_POST["signup"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
     <link rel="stylesheet" href="register.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -59,7 +59,7 @@ if (isset($_POST["signup"])) {
         <div class="form-box">
             <div class="form-value">
                 <form action="" method="post">
-                    <h2>Sign Up</h2>
+                    <h2>USER REGISTER</h2>
                     <div class="inputbox">
                         <input type="text" name="username1" id="username1" required>
                         <label for="username1">Username <label>

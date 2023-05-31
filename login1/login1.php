@@ -1,3 +1,47 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["login"])) {
+    header("location: ../catalog/catalog1");
+    exit;
+}
+
+require '../admin/functions.php';
+
+if (isset($_POST["login"])) {
+
+    $username1 = $_POST["username"];
+    $password3 = $_POST["password"];
+
+    $result = mysqli_query($conn, "SELECT * FROM  users WHERE username = '$username1'");
+
+
+    //cek username
+
+    if (mysqli_num_rows($result) === 1) {
+
+
+        //cek password
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password3, $row["password"])) {
+            // set session
+            $_SESSION["login"] = true;
+
+
+
+
+            header("location: ../catalog/catalog.php");
+            exit;
+        }
+    }
+
+    $error = true;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +49,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LOG IN</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="login1.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -29,8 +73,8 @@
         </ul>
         <!-- icon -->
         <div class="header-icon">
-            <i class='bx bx-cart'></i>
             <i class='bx bx-search' id="search-icon"></i>
+            <i class='bx bx-cart'></i>
         </div>
         <!-- search box -->
         <div class="search-box">
@@ -38,30 +82,40 @@
         </div>
     </header>
     <!-- LOGIN -->
+
+    <?php if (isset($error)) :  ?>
+        <p> Username / Password salah </p>
+    <?php endif; ?>
+
     <section>
-        <div class="form-box" data-aos="flip-down" data-aos-duration="2000">
+        <div class="form-box">
             <div class="form-value">
-                <form action="">
-                    <h2>Login</h2>
+                <form action="" method="post">
+                    <h2> USER LOGIN </h2>
                     <div class="inputbox">
-                        <input type="email" required>
-                        <label for="">Email <label>
+                        <label for="username">Username </label>
+                        <input type="text" name="username" id="username">
                     </div>
                     <div class="inputbox">
-                        <input type="Password" required>
-                        <label for="">Password <label>
+                        <label for="password">Password </label>
+                        <input type="password" name="password" id="password">
                     </div>
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember Me <a href="#">Forget Password?</a></label>
                     </div>
-                    <button>Log In</button>
+                    <button type="submit" name="login">Log In </button>
                     <div class="register">
                         <p>Don't Have a Account <a href="../register/register.php">Register</a></p>
                     </div>
-                </form>
+
             </div>
         </div>
+
+
+
+        </form>
     </section>
+
     <!-- FOOTER SECTION -->
     <section class="footer">
         <div class="footer-box">
