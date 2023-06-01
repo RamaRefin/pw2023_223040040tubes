@@ -1,13 +1,5 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
-$query = "SELECT * FROM mahasiswa";
-$mahasiswa = $conn->query($query);
-
-?>
-
-<?php
-
 session_start();
 
 if (!isset($_SESSION["login"])) {
@@ -26,7 +18,7 @@ if (!isset($_SESSION["login"])) {
     <title>Catalog</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href="detail.css">
 </head>
 
 <body>
@@ -40,7 +32,7 @@ if (!isset($_SESSION["login"])) {
         <ul class="navbar">
             <li><a href="../item2/item2.php">Home</a></li>
             <li><a href="#about">About us</a></li>
-            <li><a href="#product">Product</a></li>
+            <li><a href="../catalog/catalog.php">Product</a></li>
             <li><a href="#customer">customer</a></li>
         </ul>
         <!-- icon -->
@@ -54,39 +46,61 @@ if (!isset($_SESSION["login"])) {
             <input type="search" name="" id="" placeholder="Search here...">
         </div>
     </header>
-    <!-- HOME -->
-    <section class="home" data-aos="zoom-in-up" data-aos-duration="2000" id="home">
-        <div class="home-text">
-        </div>
-        <div class="home-img">
-            <img src="" alt="">
-        </div>
-    </section>
 
-    <!-- product -->
-    <section class="product" data-aos="zoom-out-up" data-aos-duration="2000" id="product">
-        <div class="heading">
-            <h2>Our product</h2>
-        </div>
-        <br><br>
-        <!-- container -->
-        <div class="product-container">
-            <?php while ($row = mysqli_fetch_assoc($mahasiswa)) { ?>
-                <div class="box">
-                    <img src="img/ip12.png" alt="iphone">
-                    <h3><?= $row["Judul"]; ?></h3>
-                    <p><?= $row["Deskripsi"]; ?>
-                    <div class="content">
-                        <span>
-                            <p><?= $row["Harga"]; ?></p>
-                        </span>
-                        <a href="../detailitem/detail.php">add to cart</a>
+
+
+    <!-- detail produk -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="img/ip12b.png" alt="" width="80%" id="productimg">
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="img/ip12b.png" alt="" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/ip12g.png" alt="" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/ip12p.png" alt="" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="img/ip12w.png" alt="" width="100%" class="small-img">
                     </div>
                 </div>
-            <?php } ?>
+            </div>
+            <div class="col-2">
+                <p> Home / Phone </p>
+                <h1> IPHONE 12 </h1>
+                <h4> Rp.12.499.000 </h4>
+                <select>
+                    <option>Select Ram </option>
+                    <option>64GB</option>
+                    <option>128GB</option>
+                    <option>256GB</option>
+                </select>
+                <input type="number" values="1">
+                <a href="" class="btn">Add To Cart</a>
+                <h3> Product Detail </h3>
+                <p> iPhone 12. Layar Super Retina XDR 6,1 inci yang begitu cerah.
+                    1 Ceramic Shield dengan ketahanan jatuh empat kali lebih baik.
+                    2 Fotografi pencahayaan rendah yang menakjubkan dengan mode Malam di semua kamera.
+                    Mampu merekam, mengedit, dan memutar video sekelas sinema dengan Dolby Vision.
+                    Chip A14 Bionic yang andal.
+                    Dan aksesori MagSafe baru untuk kemudahan pemasangan dan pengisian daya nirkabel yang lebih cepat.
+                    3 Saatnya bersenang-senang.</p>
+                <h5>
+                    Isi Kotak :
+                    <h5>iPhone dengan iOS 14.</h5>
+                    <h5>Kabel USB-C ke Lightning.</h5>
+                    <h5> Buku Manual dan dokumentasi lain.</h5>
+                </h5>
+            </div>
         </div>
-    </section>
-    <!-- FOOTER SECTION -->
+    </div>
+
+
+    <!-- footer section -->
     <section class="footer">
         <div class="footer-box">
             <h3> Space Tech </h3>
@@ -131,9 +145,29 @@ if (!isset($_SESSION["login"])) {
     <div class="copyright">
         <p>&#169; All right Reserved</p>
     </div>
+    <script>
+        var productimg = document.getElementById("productimg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function() {
+            productimg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function() {
+            productimg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function() {
+            productimg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function() {
+            productimg.src = smallimg[3].src;
+        }
+    </script>
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+    <script src=" https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>

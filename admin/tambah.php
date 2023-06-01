@@ -50,7 +50,7 @@ if (isset($_POST["submit"])) {
         <nav>
             <ul>
                 <li><a href="#" class="logo">
-                        <img src="img/admin.png" alt="admin.png">
+                        <img src="img/ibnu.jpg" alt="admin.png">
                         <span class="nav-item"> Refin </span>
                     </a></li>
                 <li><a href="../admin/Dashboard.php">
@@ -61,9 +61,9 @@ if (isset($_POST["submit"])) {
                         <i class="fas fa-solid fa-user"></i>
                         <span class="nav-item">Profile</span>
                     </a></li>
-                <li><a href="">
-                        <i class="fas fa-solid fa-wallet"></i>
-                        <span class="nav-item">Wallet</span>
+                <li><a href="index.php">
+                        <i class="fas fa-solid fa-boxes-stacked"></i>
+                        <span class="nav-item">Item Detail</span>
                     </a></li>
                 <li><a href="">
                         <i class="fas fa-solid fa-chart-bar"></i>
@@ -105,7 +105,7 @@ if (isset($_POST["submit"])) {
                         <input type="text" name="email" required>
                     </li>
                     <li>
-                        <label for="nrp">Jurusan </label>
+                        <label for="nrp">Ket </label>
                         <input type="text" name="jurusan" required>
                     </li>
                     <li>

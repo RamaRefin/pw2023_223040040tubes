@@ -76,8 +76,8 @@
                 <img src="img/ip12.png" alt="iphone">
                 <h3> Iphone 12 </h3>
                 <div class="content">
-                    <span>Rp. 11.999.000</span>
-                    <a href="#">add to cart</a>
+                    <span>Rp. 12.499.000</span>
+                    <a href="../detailitem/detail.php">add to cart</a>
                 </div>
             </div>
             <div class="box">
