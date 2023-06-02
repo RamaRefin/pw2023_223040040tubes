@@ -46,11 +46,12 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubah Data Mahasiswa</title>
+    <title>Ubah Data Item</title>
 </head>
 
 <body>
-    <h1> Ubah data mahasiswa</h1>
+    <a href="index.php">Back</a>
+    <h1> Ubah data Item</h1>
 
     <form action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $mhs["id"]; ?>">

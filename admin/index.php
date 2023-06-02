@@ -61,8 +61,8 @@ if (isset($_POST["cari"])) {
 
     <form action="" method="post">
 
-        <input type="text" name="keyword" size="35" autofocus placeholder="Pencarian..." autocomplete="off">
-        <button type="submit" name="cari">Cari!</button>
+        <input type="text" name="keyword" size="35" autofocus placeholder="Pencarian..." autocomplete="off" id="keyword">
+        <button type="submit" name="cari" id="tombol-cari">Cari!</button>
 
     </form>
     <br><br>
@@ -90,44 +90,45 @@ if (isset($_POST["cari"])) {
 
 
     <br><br>
+    <div id="container">
+        <table border="1" cellpadding="10" cellspacing="0">
 
-    <table border="1" cellpadding="10" cellspacing="0">
-
-        <tr>
-            <th>No.</th>
-            <th>Opsi</th>
-            <th>Gambar</th>
-            <th>Nama</th>
-            <th>Deskripsi</th>
-            <th>Harga</th>
-            <th>ket</th>
-        </tr>
-
-        <?php $i = 1; ?>
-        <?php foreach ($mahasiswa as $row) : ?>
             <tr>
-                <td><?= $i; ?></td>
-                <td>
-                    <a href="ubah.php?id=<?= $row["id"]; ?>">ubah</a>
-                    <a href=" hapus.php?id=<?= $row["id"]; ?>" onclick="
-                    return confirm('yakin?');">hapus</a>
-                </td>
-                <td><img src="img/<?= $row["gambar"]; ?>" width="100"></td>
-                <td><?= $row["Judul"]; ?></td>
-                <td><?= $row["Deskripsi"]; ?></td>
-                <td><?= $row["Harga"]; ?></td>
-                <td><?= $row["ket"]; ?></td>
+                <th>No.</th>
+                <th>Opsi</th>
+                <th>Gambar</th>
+                <th>Nama</th>
+                <th>Deskripsi</th>
+                <th>Harga</th>
+                <th>ket</th>
             </tr>
-            <?php $i++; ?>
-        <?php endforeach; ?>
+
+            <?php $i = 1; ?>
+            <?php foreach ($mahasiswa as $row) : ?>
+                <tr>
+                    <td><?= $i; ?></td>
+                    <td>
+                        <a href="ubah.php?id=<?= $row["id"]; ?>">ubah</a>
+                        <a href=" hapus.php?id=<?= $row["id"]; ?>" onclick="
+                    return confirm('yakin?');">hapus</a>
+                    </td>
+                    <td><img src="img/<?= $row["gambar"]; ?>" width="100"></td>
+                    <td><?= $row["Judul"]; ?></td>
+                    <td><?= $row["Deskripsi"]; ?></td>
+                    <td><?= $row["Harga"]; ?></td>
+                    <td><?= $row["ket"]; ?></td>
+                </tr>
+                <?php $i++; ?>
+            <?php endforeach; ?>
 
 
-    </table>
+        </table>
+    </div>
     <br><br>
     <a href="logout.php">Log out</a>
 
 
-
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

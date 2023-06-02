@@ -13,8 +13,6 @@ function query($query)
     return $rows;
 }
 
-
-
 function tambah($data)
 {
     global $conn;

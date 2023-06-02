@@ -43,15 +43,17 @@ if (!isset($_SESSION["login"])) {
             <li><a href="#product">Product</a></li>
             <li><a href="#customer">customer</a></li>
         </ul>
+        <!-- search box -->
+        <form action="" method="post">
+
+            <input type="text" name="keyword" size="35" autofocus placeholder="Pencarian..." autocomplete="off" id="keyword">
+            <button type="submit" name="cari" id="tombol-cari">Cari!</button>
+
+        </form>
         <!-- icon -->
         <div class="header-icon">
-            <i class='bx bx-search' id="search-icon"></i>
             <i class='bx bx-cart'></i>
             <a href="../logoutus/logoutus.php"><i class='bx bx-log-out'></a></i>
-        </div>
-        <!-- search box -->
-        <div class="search-box">
-            <input type="search" name="" id="" placeholder="Search here...">
         </div>
     </header>
     <!-- HOME -->
@@ -70,22 +72,24 @@ if (!isset($_SESSION["login"])) {
         </div>
         <br><br>
         <!-- container -->
-        <div class="product-container">
-            <?php while ($row = mysqli_fetch_assoc($mahasiswa)) { ?>
-                <div class="box">
-                    <img src="img/ip12.png" alt="iphone">
-                    <h3><?= $row["Judul"]; ?></h3>
-                    <p><?= $row["Deskripsi"]; ?>
-                    <div class="content">
-                        <span>
-                            <p><?= $row["Harga"]; ?></p>
-                        </span>
-                        <a href="../detailitem/detail.php">add to cart</a>
+        <div id="container">
+            <div class="product-container">
+                <?php while ($row = mysqli_fetch_assoc($mahasiswa)) { ?>
+                    <div class="box">
+                        <img src="img/ip12.png" alt="iphone">
+                        <h3><?= $row["Judul"]; ?></h3>
+                        <p><?= $row["Deskripsi"]; ?>
+                        <div class="content">
+                            <span>
+                                <p><?= $row["Harga"]; ?></p>
+                            </span>
+                            <a href="../detailitem/detail.php">add to cart</a>
+                        </div>
                     </div>
-                </div>
-            <?php } ?>
-        </div>
+                <?php } ?>
+            </div>
     </section>
+    </div>
     <!-- FOOTER SECTION -->
     <section class="footer">
         <div class="footer-box">
@@ -137,7 +141,7 @@ if (!isset($_SESSION["login"])) {
     <script>
         AOS.init();
     </script>
-    <script src="main1.js"></script>
+    <script src="../js/script2.js"></script>
 
 </body>
 

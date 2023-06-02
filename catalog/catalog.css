@@ -83,31 +83,9 @@ header {
   cursor: pointer;
   display: none;
 }
-.search-box {
-  position: absolute;
-  top: -100%;
-  left: 50%;
-  transform: translate(-50%);
-  background: var(--bg-color);
-  width: 100%;
-}
-.search-box .active {
-  top: 110%;
-  box-shadow: var(--box-shadow);
-  transition: 0.2 all linear;
-}
-.search-box input {
-  padding: 20px;
-  border: none;
-  outline: none;
-  width: 100%;
-  font-size: 1rem;
-  color: var(--main-color);
-}
-.search-box input::placeholder {
-  font-size: 1rem;
-  font-weight: 500;
-}
+
+/* searchbox */
+
 /* HOME */
 .home {
   width: 100%;
