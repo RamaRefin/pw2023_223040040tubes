@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #e4fdfa;
+  background: white;
 }
 
 .container {
@@ -22,7 +22,7 @@ nav {
   bottom: 0;
   height: 100vh;
   left: 0;
-  background: #afe7b8;
+  background: black;
   width: 280px;
   overflow: hidden;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);

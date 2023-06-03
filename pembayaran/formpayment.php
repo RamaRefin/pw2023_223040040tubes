@@ -2,45 +2,11 @@
 
 session_start();
 
-if (isset($_SESSION["login"])) {
-    header("location: ../pembayaran/formpayment.php");
+if (!isset($_SESSION["login"])) {
+    header("location: ../login1/login1.php");
     exit;
 }
-
-require '../admin/functions.php';
-
-if (isset($_POST["login"])) {
-
-    $username1 = $_POST["username"];
-    $password3 = $_POST["password"];
-
-    $result = mysqli_query($conn, "SELECT * FROM  users WHERE username = '$username1'");
-
-
-    //cek username
-
-    if (mysqli_num_rows($result) === 1) {
-
-
-        //cek password
-        $row = mysqli_fetch_assoc($result);
-        if (password_verify($password3, $row["password"])) {
-            // set session
-            $_SESSION["login"] = true;
-
-
-
-
-            header("location: ../pembayaran/formpayment.php");
-            exit;
-        }
-    }
-
-    $error = true;
-}
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,15 +15,15 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOG IN</title>
+    <title>Document</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="login1.css">
+    <link rel="stylesheet" href="formpayment.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
 </head>
 
 <body>
+
+    <!-- navbar  -->
     <header>
         <a href="#" class="logo">
             <img src="img/icon.png" alt="icon">
@@ -68,55 +34,93 @@ if (isset($_POST["login"])) {
         <ul class="navbar">
             <li><a href="../item2/item2.php">Home</a></li>
             <li><a href="#about">About us</a></li>
-            <li><a href="../catalog/catalog.php">Product</a></li>
+            <li><a href="#product">Product</a></li>
             <li><a href="#customer">customer</a></li>
         </ul>
         <!-- icon -->
         <div class="header-icon">
             <i class='bx bx-search' id="search-icon"></i>
             <i class='bx bx-cart'></i>
+            <a href="../login1/Login1.php"><i class='bx bx-log-in'></a></i>
         </div>
         <!-- search box -->
         <div class="search-box">
             <input type="search" name="" id="" placeholder="Search here...">
         </div>
     </header>
-    <!-- LOGIN -->
 
-    <?php if (isset($error)) :  ?>
-        <p> Username / Password salah </p>
-    <?php endif; ?>
+    <!-- form pembayaran -->
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="col">
+                    <h3 class="tittle">Billing address </h3>
 
-    <section>
-        <div class="form-box">
-            <div class="form-value">
-                <form action="" method="post">
-                    <h2> USER LOGIN </h2>
                     <div class="inputbox">
-                        <label for="username">Username </label>
-                        <input type="text" name="username" id="username">
+                        <span> Full name : </span>
+                        <input type="text" placeholder="Agus">
                     </div>
                     <div class="inputbox">
-                        <label for="password">Password </label>
-                        <input type="password" name="password" id="password">
+                        <span> Email : </span>
+                        <input type="email" placeholder="agus@examples.com">
                     </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me <a href="#">Forget Password?</a></label>
+                    <div class="inputbox">
+                        <span> Address </span>
+                        <input type="text" placeholder="no - street - local">
                     </div>
-                    <button type="submit" name="login">Log In </button>
-                    <div class="register">
-                        <p>Don't Have a Account <a href="../register/register.php">Register</a></p>
+                    <div class="inputbox">
+                        <span> City : </span>
+                        <input type="text" placeholder="Jakarta">
                     </div>
+                    <div class="flex">
+                        <div class="inputbox">
+                            <span> State : </span>
+                            <input type="text" placeholder="Indonesia">
+                        </div>
+                        <div class="inputbox">
+                            <span> Zip code : </span>
+                            <input type="text" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="tittle">Payment </h3>
 
-            </div>
-        </div>
+                    <div class="inputbox">
+                        <span> Cards accepted :</span>
+                        <img src="img/card_img.png" alt="">
+                    </div>
+                    <div class="inputbox">
+                        <span> Name on Card : </span>
+                        <input type="Text" placeholder="Mr agus">
+                    </div>
+                    <div class="inputbox">
+                        <span> Credit card number : </span>
+                        <input type="number" placeholder="111 222 333">
+                    </div>
+                    <div class="inputbox">
+                        <span> Exp Month : </span>
+                        <input type="text" placeholder="Janury">
+                    </div>
+                    <div class="flex">
+                        <div class="inputbox">
+                            <span> Exp Year : </span>
+                            <input type="number" placeholder="2024">
+                        </div>
+                        <div class="inputbox">
+                            <span> CVV </span>
+                            <input type="text" placeholder="000">
+                        </div>
 
-
-
+                    </div>
+                </div>
+                <input type="submit" value="Procced to checkout" class="submit-btn">
         </form>
-    </section>
+    </div>
+    </div>
 
     <!-- FOOTER SECTION -->
+
     <section class="footer">
         <div class="footer-box">
             <h3> Space Tech </h3>
@@ -164,12 +168,7 @@ if (isset($_POST["login"])) {
 
 
 
-
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 
 </html>

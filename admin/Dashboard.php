@@ -30,10 +30,6 @@
                         <i class="fas fa-solid fa-boxes-stacked"></i>
                         <span class="nav-item">Item Detail</span>
                     </a></li>
-                <li><a href="">
-                        <i class="fas fa-solid fa-chart-bar"></i>
-                        <span class="nav-item">Analytics</span>
-                    </a></li>
                 <li><a href="../admin/tambah.php">
                         <i class="fas fa-solid fa-tasks"></i>
                         <span class="nav-item">Add Item</span>

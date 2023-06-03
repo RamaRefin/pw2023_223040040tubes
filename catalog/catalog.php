@@ -6,16 +6,6 @@ $mahasiswa = $conn->query($query);
 
 ?>
 
-<?php
-
-session_start();
-
-if (!isset($_SESSION["login"])) {
-    header("location: ../login1/login1.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 

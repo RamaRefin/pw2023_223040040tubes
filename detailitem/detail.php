@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION["login"])) {
-    header("location: ../login1/login1.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,8 +69,8 @@ if (!isset($_SESSION["login"])) {
                     <option>128GB</option>
                     <option>256GB</option>
                 </select>
-                <input type="number" values="1">
-                <a href="" class="btn">Add To Cart</a>
+                <input type="number" values="1" require>
+                <a href="../pembayaran/formpayment.php" class="btn">Add To Cart</a>
                 <h3> Product Detail </h3>
                 <p> iPhone 12. Layar Super Retina XDR 6,1 inci yang begitu cerah.
                     1 Ceramic Shield dengan ketahanan jatuh empat kali lebih baik.
