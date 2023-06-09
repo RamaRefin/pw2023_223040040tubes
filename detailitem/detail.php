@@ -1,3 +1,17 @@
+<?php
+
+require '../admin/functions.php';
+$id = $_GET['id'] ?? '';
+$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+$catalog = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
+$query = ("SELECT * FROM mahasiswa WHERE id = $id")[0];
+$mahasiswa = $conn->query($query);
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,10 +57,10 @@
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img src="img/ip12b.png" alt="" width="80%" id="productimg">
+                <img src="img/<?= $catalog['gambar'] ?>" alt="" width="80%" id="productimg">
                 <div class="small-img-row">
                     <div class="small-img-col">
-                        <img src="img/ip12b.png" alt="" width="100%" class="small-img">
+                        <img src="img/ip12.png" alt="" width="100%" class="small-img">
                     </div>
                     <div class="small-img-col">
                         <img src="img/ip12g.png" alt="" width="100%" class="small-img">
@@ -61,8 +75,8 @@
             </div>
             <div class="col-2">
                 <p> Home / Phone </p>
-                <h1> IPHONE 12 </h1>
-                <h4> Rp.12.499.000 </h4>
+                <h1> <?php echo $catalog['Judul'] ?></h1>
+                <h4> <?php echo $catalog['Deskripsi'] ?></h4>
                 <select>
                     <option>Select Ram </option>
                     <option>64GB</option>
@@ -72,13 +86,7 @@
                 <input type="number" values="1" require>
                 <a href="../pembayaran/formpayment.php" class="btn">Add To Cart</a>
                 <h3> Product Detail </h3>
-                <p> iPhone 12. Layar Super Retina XDR 6,1 inci yang begitu cerah.
-                    1 Ceramic Shield dengan ketahanan jatuh empat kali lebih baik.
-                    2 Fotografi pencahayaan rendah yang menakjubkan dengan mode Malam di semua kamera.
-                    Mampu merekam, mengedit, dan memutar video sekelas sinema dengan Dolby Vision.
-                    Chip A14 Bionic yang andal.
-                    Dan aksesori MagSafe baru untuk kemudahan pemasangan dan pengisian daya nirkabel yang lebih cepat.
-                    3 Saatnya bersenang-senang.</p>
+                <p> <?= $catalog['ket'] ?></p>
                 <h5>
                     Isi Kotak :
                     <h5>iPhone dengan iOS 14.</h5>

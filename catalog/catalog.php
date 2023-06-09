@@ -43,7 +43,7 @@ $mahasiswa = $conn->query($query);
         <!-- icon -->
         <div class="header-icon">
             <i class='bx bx-cart'></i>
-            <a href="../logoutus/logoutus.php"><i class='bx bx-log-out'></a></i>
+            <a href="../login1/login1.php"><i class='bx bx-log-in'></a></i>
         </div>
     </header>
     <!-- HOME -->
@@ -66,14 +66,14 @@ $mahasiswa = $conn->query($query);
             <div class="product-container">
                 <?php while ($row = mysqli_fetch_assoc($mahasiswa)) { ?>
                     <div class="box">
-                        <img src="img/ip12.png" alt="iphone">
+                        <img src="img/<?php echo $row["gambar"]; ?>" alt="">
                         <h3><?= $row["Judul"]; ?></h3>
                         <p><?= $row["Deskripsi"]; ?>
                         <div class="content">
                             <span>
                                 <p><?= $row["Harga"]; ?></p>
                             </span>
-                            <a href="../detailitem/detail.php">add to cart</a>
+                            <a href="../detailitem/detail.php?id=<?= $row['id'] ?>">add to cart</a>
                         </div>
                     </div>
                 <?php } ?>

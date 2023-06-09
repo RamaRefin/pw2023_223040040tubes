@@ -25,7 +25,6 @@ $firstdata = ($jumlahdata * $onpage) - $jumlahdata;
 
 
 
-
 $mahasiswa = query("SELECT * FROM mahasiswa LIMIT $firstdata, $jumlahdata");
 
 
@@ -50,7 +49,7 @@ if (isset($_POST["cari"])) {
 
 <body>
 
-    <a href="Dashboard.php">Back</a>
+    <a href="Dashboard.php">Back</a> | <a href="cetak.php" targer="_blank">Cetak</a>
     <br>
 
 

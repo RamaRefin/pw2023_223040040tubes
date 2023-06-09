@@ -41,7 +41,7 @@ if (!isset($_SESSION["login"])) {
         <div class="header-icon">
             <i class='bx bx-search' id="search-icon"></i>
             <i class='bx bx-cart'></i>
-            <a href="../login1/Login1.php"><i class='bx bx-log-in'></a></i>
+            <a href="../logoutus/logoutus.php"><i class='bx bx-log-out'></a></i>
         </div>
         <!-- search box -->
         <div class="search-box">
